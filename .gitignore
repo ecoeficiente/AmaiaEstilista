@@ -1,0 +1,15 @@
+# Pruebas y referencias locales
+test_screenshots/
+_reference/
+
+# Python / Scripts
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+*.swp
