@@ -216,61 +216,146 @@
           <p class="section-description">Prezio argiak eta gardentasun osoa hasieratik zer espero jakin dezazun. Ezkutuko kosturik gabe.</p>
         </header>
 
-        <div class="pricing-card pricing-table-card">
-          <table class="pricing-table" aria-label="Zerbitzuen eta prezio orientagarrien zerrenda">
-            <thead>
-              <tr>
-                <th scope="col" class="pricing-th-service">Zerbitzua</th>
-                <th scope="col" class="pricing-th-price">Prezio orientagarria</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="pricing-service-name">Umeen mozketa</td>
-                <td class="pricing-service-price"><strong>7 €</strong><span class="price-suffix">-tik aurrera</span></td>
-              </tr>
-              <tr>
-                <td class="pricing-service-name">Gizonen mozketa</td>
-                <td class="pricing-service-price"><strong>14 €</strong></td>
-              </tr>
-              <tr>
-                <td class="pricing-service-name">Emakumeen mozketa</td>
-                <td class="pricing-service-price"><strong>16,50 €</strong><span class="price-suffix">-tik aurrera</span></td>
-              </tr>
-              <tr>
-                <td class="pricing-service-name">Emakumeen mozketa + lehortzea</td>
-                <td class="pricing-service-price"><strong>21 €</strong><span class="price-suffix">-tik aurrera</span></td>
-              </tr>
-              <tr>
-                <td class="pricing-service-name">Markatu eta orraztu</td>
-                <td class="pricing-service-price"><strong>15 €</strong><span class="price-suffix">-tik aurrera</span></td>
-              </tr>
-              <tr>
-                <td class="pricing-service-name">Kolorea</td>
-                <td class="pricing-service-price"><strong>25 €</strong><span class="price-suffix">-tik aurrera</span></td>
-              </tr>
-              <tr>
-                <td class="pricing-service-name">Kolorea + metxak</td>
-                <td class="pricing-service-price"><strong>40 €</strong><span class="price-suffix">-tik aurrera</span></td>
-              </tr>
-              <tr>
-                <td class="pricing-service-name">Metxak eta balayage</td>
-                <td class="pricing-service-price"><strong>25 €</strong><span class="price-suffix">-tik aurrera</span></td>
-              </tr>
-              <tr>
-                <td class="pricing-service-name">Permanentea</td>
-                <td class="pricing-service-price"><strong>21 €</strong><span class="price-suffix">-tik aurrera</span></td>
-              </tr>
-              <tr>
-                <td class="pricing-service-name">Bildutakoak</td>
-                <td class="pricing-service-price"><strong>20 €</strong><span class="price-suffix">-tik aurrera</span></td>
-              </tr>
-              <tr>
-                <td class="pricing-service-name">Emaztegaiak eta orrazkera bereziak</td>
-                <td class="pricing-service-price"><strong class="price-consult">Kontsultatu</strong></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="pricing-grid">
+          <!-- 1. txartela: Moztu -->
+          <article class="price-card">
+            <div class="card-category-header">
+              <h3 class="category-title">Moztu</h3>
+              <span class="category-badge">Emakume, gizon eta haurrak</span>
+            </div>
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-info">
+                  <span class="service-name">Umeen mozketa</span>
+                  <span class="service-detail">Ume txikientzako mozketa eroso eta zaindua</span>
+                </div>
+                <div class="service-dots" aria-hidden="true"></div>
+                <span class="service-price">7 €<span class="price-suffix">-tik aurrera</span></span>
+              </li>
+              <li class="service-item">
+                <div class="service-info">
+                  <span class="service-name">Gizonen mozketa</span>
+                  <span class="service-detail">Gizonen mozketa teknika eta akabera zainduarekin</span>
+                </div>
+                <div class="service-dots" aria-hidden="true"></div>
+                <span class="service-price">14 €</span>
+              </li>
+              <li class="service-item">
+                <div class="service-info">
+                  <span class="service-name">Emakumeen mozketa</span>
+                  <span class="service-detail">Emakumeen mozketa estilo aholkularitzarekin</span>
+                </div>
+                <div class="service-dots" aria-hidden="true"></div>
+                <span class="service-price">16,50 €<span class="price-suffix">-tik aurrera</span></span>
+              </li>
+              <li class="service-item">
+                <div class="service-info">
+                  <span class="service-name">Emakumeen mozketa + lehortzea</span>
+                  <span class="service-detail">Mozketa osoa eta lehortze profesionala</span>
+                </div>
+                <div class="service-dots" aria-hidden="true"></div>
+                <span class="service-price">21 €<span class="price-suffix">-tik aurrera</span></span>
+              </li>
+            </ul>
+            <div class="price-card-footer">
+              <span>* Oinarrizko garbiketa eta mozketaren aholkularitza barne.</span>
+            </div>
+          </article>
+
+          <!-- 2. txartela: Orraztu -->
+          <article class="price-card">
+            <div class="card-category-header">
+              <h3 class="category-title">Orraztu</h3>
+              <span class="category-badge">Bolumena eta moldaketa</span>
+            </div>
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-info">
+                  <span class="service-name">Markatu eta orraztu</span>
+                  <span class="service-detail">Garbiketa, moldeaketa eta orrazkera estiloduna</span>
+                </div>
+                <div class="service-dots" aria-hidden="true"></div>
+                <span class="service-price">15 €<span class="price-suffix">-tik aurrera</span></span>
+              </li>
+              <li class="service-item">
+                <div class="service-info">
+                  <span class="service-name">Permanentea</span>
+                  <span class="service-detail">Uhinak, bolumena eta iraupen luzeko mugimendua</span>
+                </div>
+                <div class="service-dots" aria-hidden="true"></div>
+                <span class="service-price">21 €<span class="price-suffix">-tik aurrera</span></span>
+              </li>
+            </ul>
+            <div class="price-card-footer">
+              <span>* Zure estilora eta nahi duzun iraupenera egokitutako akaberak.</span>
+            </div>
+          </article>
+
+          <!-- 3. txartela: Kolorea eta Metxak -->
+          <article class="price-card">
+            <div class="card-category-header">
+              <h3 class="category-title">Kolorea eta Metxak</h3>
+              <span class="category-badge">Teknika eta distira</span>
+            </div>
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-info">
+                  <span class="service-name">Kolorea</span>
+                  <span class="service-detail">Estaldura uniformea ilearen osasuna zainduz</span>
+                </div>
+                <div class="service-dots" aria-hidden="true"></div>
+                <span class="service-price">25 €<span class="price-suffix">-tik aurrera</span></span>
+              </li>
+              <li class="service-item">
+                <div class="service-info">
+                  <span class="service-name">Kolorea + metxak</span>
+                  <span class="service-detail">Koloreztapen osoa argitasun ukituekin konbinatuta</span>
+                </div>
+                <div class="service-dots" aria-hidden="true"></div>
+                <span class="service-price">40 €<span class="price-suffix">-tik aurrera</span></span>
+              </li>
+              <li class="service-item">
+                <div class="service-info">
+                  <span class="service-name">Metxak eta balayage</span>
+                  <span class="service-detail">Erreflexu argitsuak, ñabardurak edo degradatu naturala</span>
+                </div>
+                <div class="service-dots" aria-hidden="true"></div>
+                <span class="service-price">25 €<span class="price-suffix">-tik aurrera</span></span>
+              </li>
+            </ul>
+            <div class="price-card-footer">
+              <span>* Kalitate handiko produktu profesionalak ilea zaintzeko.</span>
+            </div>
+          </article>
+
+          <!-- 4. txartela: Bereziak -->
+          <article class="price-card">
+            <div class="card-category-header">
+              <h3 class="category-title">Bereziak</h3>
+              <span class="category-badge">Ekitaldiak eta ospakizunak</span>
+            </div>
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-info">
+                  <span class="service-name">Bildutakoak</span>
+                  <span class="service-detail">Ezkontza, ospakizun eta ekitaldi berezietarako orrazkerak</span>
+                </div>
+                <div class="service-dots" aria-hidden="true"></div>
+                <span class="service-price">20 €<span class="price-suffix">-tik aurrera</span></span>
+              </li>
+              <li class="service-item">
+                <div class="service-info">
+                  <span class="service-name">Emaztegaiak eta orrazkera bereziak</span>
+                  <span class="service-detail">Arreta pertsonalizatua eta aholkularitza esklusiboa</span>
+                </div>
+                <div class="service-dots" aria-hidden="true"></div>
+                <span class="service-price service-price-consult">Kontsultatu</span>
+              </li>
+            </ul>
+            <div class="price-card-footer">
+              <span>* Hitzordua probak eta prestaketa lasai egiteko.</span>
+            </div>
+          </article>
         </div>
 
         <div class="pricing-clarification">
