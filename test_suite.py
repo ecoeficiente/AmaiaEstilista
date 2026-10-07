@@ -54,17 +54,17 @@ def test_site():
 
     # 3. Check factual prices consistency
     expected_prices_es = {
-        "Caballero": "13",
-        "Bebé": "5",
-        "Niño": "9",
-        "Niña": "9 – 16",
-        "Corte y Marcado": "27 – 30",
-        "Marcado": "14 – 17",
-        "Color": "23 – 25",
-        "Mechas plata": "18 – 25",
-        "Mechas peine": "7",
-        "Recogido": "35",
-        "Keratina": "50 – 100"
+        "Corte infantil": "7",
+        "Corte caballero": "14",
+        "Corte mujer": "16,50",
+        "Corte mujer + secado": "21",
+        "Marcado y peinado": "15",
+        "Color": "25",
+        "Color + mechas": "40",
+        "Mechas y balayage": "25",
+        "Permanente": "21",
+        "Recogidos": "20",
+        "Novias y peinados especiales": "Consultar"
     }
 
     with open(r"c:\Dev\AmaiaEstilista\index.html", "r", encoding="utf-8") as f:
@@ -76,20 +76,26 @@ def test_site():
         if price not in es_html:
             errors.append(f"Missing price {price} for {item} in ES")
         else:
-            print(f"[OK] ES Price verified: {item} -> {price} €")
+            print(f"[OK] ES Price verified: {item} -> {price}")
+
+    disclaimer_es = "Precios orientativos. Pueden variar según el largo y cantidad de cabello, la técnica utilizada y el servicio realizado. Consúltanos para obtener un precio personalizado."
+    if disclaimer_es not in es_html:
+        errors.append("Missing disclaimer in ES")
+    else:
+        print("[OK] ES Disclaimer verified")
 
     expected_prices_eu = {
-        "Gizona": "13",
-        "Umea": "5",
-        "Mutila": "9",
-        "Neska": "9 – 16",
-        "Moztu eta orraztu": "27 – 30",
-        "Orraztu": "14 – 17",
-        "Tindatu / Kolorea": "23 – 25",
-        "Zilarrezko metxak": "18 – 25",
-        "Orrazi-metxak": "7",
-        "Bildutakoak / Orrazkera": "35",
-        "Keratina": "50 – 100"
+        "Umeen mozketa": "7",
+        "Gizonen mozketa": "14",
+        "Emakumeen mozketa": "16,50",
+        "Emakumeen mozketa + lehortzea": "21",
+        "Markatu eta orraztu": "15",
+        "Kolorea": "25",
+        "Kolorea + metxak": "40",
+        "Metxak eta balayage": "25",
+        "Permanentea": "21",
+        "Bildutakoak": "20",
+        "Emaztegaiak eta orrazkera bereziak": "Kontsultatu"
     }
 
     with open(r"c:\Dev\AmaiaEstilista\eu\index.html", "r", encoding="utf-8") as f:
@@ -101,7 +107,13 @@ def test_site():
         if price not in eu_html:
             errors.append(f"Missing price {price} for {item} in EU")
         else:
-            print(f"[OK] EU Price verified: {item} -> {price} €")
+            print(f"[OK] EU Price verified: {item} -> {price}")
+
+    disclaimer_eu = "Prezio orientagarriak. Ilearen luzera eta kantitatearen, erabilitako teknikaren eta egindako zerbitzuaren arabera alda daitezke. Galdetu iezaguzu prezio pertsonalizatua lortzeko."
+    if disclaimer_eu not in eu_html:
+        errors.append("Missing disclaimer in EU")
+    else:
+        print("[OK] EU Disclaimer verified")
 
     # 4. Check links
     phone_clean = "697 18 93 05"

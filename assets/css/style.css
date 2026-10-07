@@ -803,8 +803,149 @@ ul, ol {
   color: var(--color-ink-subtle);
 }
 
+.pricing-table-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px 18px;
+  overflow-x: auto;
+}
+
+@media (min-width: 640px) {
+  .pricing-table-card {
+    padding: 24px 30px;
+  }
+}
+
+.pricing-table-card:hover {
+  transform: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pricing-table thead tr {
+  border-bottom: 2px solid var(--color-border);
+}
+
+.pricing-table th {
+  padding: 12px 12px 14px 12px;
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: 0.01em;
+}
+
+.pricing-table th.pricing-th-service {
+  text-align: left;
+}
+
+.pricing-table th.pricing-th-price {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.pricing-table tbody tr {
+  border-bottom: 1px solid var(--color-border-light);
+  transition: background-color 0.15s ease;
+}
+
+.pricing-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.pricing-table tbody tr:hover {
+  background-color: var(--color-surface-soft);
+}
+
+.pricing-table td {
+  padding: 13px 12px;
+  vertical-align: middle;
+}
+
+@media (min-width: 640px) {
+  .pricing-table td {
+    padding: 15px 14px;
+  }
+}
+
+.pricing-service-name {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  line-height: 1.35;
+}
+
+@media (min-width: 640px) {
+  .pricing-service-name {
+    font-size: 1rem;
+  }
+}
+
+.pricing-service-price {
+  text-align: right;
+  font-size: 0.9375rem;
+  color: var(--color-ink);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) {
+  .pricing-service-price {
+    font-size: 1.0625rem;
+  }
+}
+
+.pricing-service-price strong {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.pricing-service-price .price-prefix {
+  font-size: 0.8125rem;
+  color: var(--color-ink-muted);
+  font-weight: 400;
+  margin-right: 3px;
+}
+
+.pricing-service-price .price-suffix {
+  font-size: 0.8125rem;
+  color: var(--color-ink-muted);
+  font-weight: 400;
+  margin-left: 3px;
+}
+
+.pricing-service-price .price-consult {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .pricing-table-card {
+    padding: 10px 12px;
+  }
+  .pricing-table th {
+    padding: 10px 8px;
+    font-size: 0.9375rem;
+  }
+  .pricing-table td {
+    padding: 11px 8px;
+  }
+  .pricing-service-name {
+    font-size: 0.875rem;
+  }
+  .pricing-service-price {
+    font-size: 0.875rem;
+  }
+}
+
 .pricing-clarification {
-  margin-top: 20px;
+  max-width: 760px;
+  margin: 22px auto 0;
   padding: 14px 18px;
   background: var(--color-surface-soft);
   border-radius: var(--radius-sm);
