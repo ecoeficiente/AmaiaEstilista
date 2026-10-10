@@ -9,22 +9,28 @@
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Paleta cromática */
-  --color-bg: #FBF9F5;
+  /* Paleta cromática (derivada del encabezado: crema, salvia y carbón) */
+  --color-bg: #F7F5F0;
   --color-surface: #FFFFFF;
-  --color-surface-soft: #F6F2EC;
-  --color-surface-hover: #F2ECE3;
-  --color-ink: #1C232B;
-  --color-ink-muted: #53606E;
-  --color-ink-subtle: #798795;
-  --color-border: #E8E2D7;
-  --color-border-light: #F0ECE4;
+  --color-surface-soft: #F0F3EF;
+  --color-surface-hover: #E7ECE7;
+  --color-ink: #1F2422;
+  --color-ink-muted: #505955;
+  --color-ink-subtle: #6E7873;
+  --color-border: #DDE3DC;
+  --color-border-light: #EBEEE8;
 
-  /* Colores de acento */
-  --color-accent: #A64B33;
-  --color-accent-dark: #873B26;
-  --color-accent-tint: #FDF3F0;
-  --color-accent-border: #F0D5CD;
+  /* Colores de acento (verde salvia) */
+  --color-accent: #4D6B57;
+  --color-accent-dark: #3B5444;
+  --color-accent-tint: #EDF2EE;
+  --color-accent-border: #CCDAD0;
+  --color-accent-rgb: 77, 107, 87;
+
+  /* Tonos de apoyo del encabezado */
+  --color-sage-mist: #E4EBE5;
+  --color-cream: #FAF8F3;
+  --color-wood: #E9DCCB;
 
   /* Estados de apertura */
   --color-open: #1B7846;
@@ -48,9 +54,9 @@
   --radius-pill: 9999px;
 
   /* Sombras sutiles */
-  --shadow-sm: 0 1px 3px rgba(28, 35, 43, 0.05);
-  --shadow-md: 0 4px 14px rgba(28, 35, 43, 0.07);
-  --shadow-lg: 0 12px 30px rgba(28, 35, 43, 0.09);
+  --shadow-sm: 0 1px 3px rgba(31, 36, 34, 0.05);
+  --shadow-md: 0 4px 14px rgba(31, 36, 34, 0.07);
+  --shadow-lg: 0 12px 30px rgba(31, 36, 34, 0.09);
 
   /* Medidas de diseño */
   --max-width: 1040px;
@@ -183,7 +189,7 @@ ul, ol {
   position: sticky;
   top: 0;
   z-index: 90;
-  background-color: rgba(251, 249, 245, 0.94);
+  background-color: rgba(250, 248, 243, 0.94);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
@@ -364,6 +370,40 @@ ul, ol {
   pointer-events: none;
 }
 
+/* Encabezado ilustrado a sangre en la parte superior de la tarjeta */
+.hero-media {
+  position: relative;
+  margin: -24px -18px 22px;
+  background: var(--color-cream);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.hero-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Fundido sutil hacia el contenido de la tarjeta */
+.hero-media::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.35) 100%);
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .hero-media {
+    margin: -40px -36px 32px;
+  }
+}
+
 .hero-meta-row {
   display: flex;
   flex-wrap: wrap;
@@ -507,13 +547,13 @@ ul, ol {
 .btn-primary {
   background-color: var(--color-accent);
   color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(166, 75, 51, 0.25);
+  box-shadow: 0 2px 8px rgba(var(--color-accent-rgb), 0.25);
 }
 
 .btn-primary:hover {
   background-color: var(--color-accent-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(166, 75, 51, 0.35);
+  box-shadow: 0 4px 12px rgba(var(--color-accent-rgb), 0.35);
 }
 
 .btn-whatsapp {
@@ -846,7 +886,7 @@ ul, ol {
    Sobre Amaia / La Peluquería
    -------------------------------------------------------------------------- */
 .about-section {
-  background-color: var(--color-surface);
+  background: linear-gradient(160deg, var(--color-cream) 0%, var(--color-sage-mist) 100%);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
@@ -898,9 +938,10 @@ ul, ol {
 
 .value-pill {
   padding: 14px 16px;
-  background: var(--color-surface-soft);
+  background: var(--color-surface);
   border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border-light);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .value-pill h4 {
@@ -1204,7 +1245,7 @@ ul, ol {
 
 /* Tarjeta visual de mapa con botón directo a Google Maps */
 .map-visual-box {
-  background: linear-gradient(135deg, #F0ECE4 0%, #E6DFD5 100%);
+  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-sage-mist) 100%);
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
   min-height: 200px;
@@ -1235,7 +1276,7 @@ ul, ol {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(166, 75, 51, 0.35);
+  box-shadow: 0 4px 12px rgba(var(--color-accent-rgb), 0.35);
   margin-bottom: 10px;
   transition: transform 0.2s ease;
 }
