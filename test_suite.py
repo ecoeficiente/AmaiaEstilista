@@ -91,13 +91,13 @@ def test_site():
         "Gizonen mozketa": "14",
         "Emakumeen mozketa": "16,50",
         "Emakumeen mozketa + lehortzea": "21",
-        "Markatu eta orraztu": "15",
+        "Ilea orraztu eta lehortu": "15",
         "Kolorea": "25",
         "Kolorea + metxak": "40",
         "Metxak eta balayage": "25",
         "Permanentea": "21",
-        "Bildutakoak": "20",
-        "Emaztegaiak eta orrazkera bereziak": "Kontsultatu"
+        "Ilea jasotzeko orrazkerak": "20",
+        "Emaztegaientzako orrazkerak": "Kontsultatu"
     }
 
     with open(r"c:\Dev\AmaiaEstilista\eu\index.html", "r", encoding="utf-8") as f:
@@ -111,7 +111,7 @@ def test_site():
         else:
             print(f"[OK] EU Price verified: {item} -> {price}")
 
-    disclaimer_eu = "Prezio orientagarriak. Ilearen luzera eta kantitatearen, erabilitako teknikaren eta egindako zerbitzuaren arabera alda daitezke. Galdetu iezaguzu prezio pertsonalizatua lortzeko."
+    disclaimer_eu = "Prezioak gutxi gorabeherakoak dira. Ilearen luzeraren, kopuruaren eta aukeratutako zerbitzuaren arabera alda daitezke. Galdetu lasai zure kasuko prezioa jakiteko."
     if disclaimer_eu not in eu_html:
         errors.append("Missing disclaimer in EU")
     else:
@@ -157,7 +157,7 @@ def test_site():
     # 7. Check Schedule copy terminology
     assert "Horario de atención y citas" in es_html
     assert "Horario de apertura" not in es_html
-    assert "Arreta eta hitzorduen ordutegia" in eu_html
+    assert "Ordutegia" in eu_html
     assert "Irekiera ordutegia" not in eu_html
     print("[OK] Schedule terminology verified")
 
