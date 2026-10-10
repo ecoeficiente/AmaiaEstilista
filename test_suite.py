@@ -48,7 +48,9 @@ def test_site():
                     assert data.get("telephone") == "+34697189305"
                     assert data.get("geo", {}).get("latitude") == 43.3238162
                     assert data.get("geo", {}).get("longitude") == -1.9311865
-                    assert len(data.get("openingHoursSpecification", [])) == 5
+                    assert len(data.get("openingHoursSpecification", [])) == 4
+                    for spec in data.get("openingHoursSpecification", []):
+                        assert "Monday" not in spec.get("dayOfWeek", [])
                 except Exception as e:
                     errors.append(f"Invalid JSON-LD in {page_path}: {e}")
 
@@ -138,6 +140,7 @@ def test_site():
     assert ":root" in css
     assert "@media (max-width: 768px)" in css
     assert "@media (prefers-reduced-motion: reduce)" in css
+    assert ".hours-note" in css
     print("[OK] CSS structure verified")
 
     # 6. Check JS logic
@@ -145,7 +148,18 @@ def test_site():
         js = f.read()
     assert "SCHEDULE" in js
     assert "initScheduleStatus" in js
+    assert "1: []" in js
+    assert "Zabalik orain" not in js
+    assert "Abierto ahora" not in js
+    assert "Disponible para citas" in js
     print("[OK] JS logic verified")
+
+    # 7. Check Schedule copy terminology
+    assert "Horario de atención y citas" in es_html
+    assert "Horario de apertura" not in es_html
+    assert "Arreta eta hitzorduen ordutegia" in eu_html
+    assert "Irekiera ordutegia" not in eu_html
+    print("[OK] Schedule terminology verified")
 
     if errors:
         print("\nERRORS FOUND:")

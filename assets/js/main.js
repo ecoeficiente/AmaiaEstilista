@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Horario oficial de Amaia Estilista:
+ * Horario oficial de atención y citas de Amaia Estilista:
  * 0: Domingo (Cerrado)
- * 1: Lunes (15:00 - 18:00)
+ * 1: Lunes (Cerrado)
  * 2: Martes (09:30 - 13:30, 15:00 - 18:00)
  * 3: Miércoles (09:30 - 13:30, 15:00 - 18:00)
  * 4: Jueves (09:30 - 13:30, 15:00 - 18:00)
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 const SCHEDULE = {
   0: [], // Domingo: cerrado
-  1: [{ start: 15 * 60, end: 18 * 60, closeStr: '18:00' }],
+  1: [], // Lunes: cerrado
   2: [
     { start: 9 * 60 + 30, end: 13 * 60 + 30, closeStr: '13:30' },
     { start: 15 * 60, end: 18 * 60, closeStr: '18:00' }
@@ -68,7 +68,7 @@ function initScheduleStatus() {
     }
   });
 
-  // Determinar si está abierto en este momento
+  // Determinar disponibilidad de citas en este momento
   const todayIntervals = SCHEDULE[currentDay] || [];
   let isOpen = false;
   let closingAt = '';
@@ -86,7 +86,7 @@ function initScheduleStatus() {
     }
   }
 
-  // Actualizar el badge de estado en el hero
+  // Actualizar el badge de estado en el hero con orientación a citas
   const statusContainer = document.getElementById('business-status');
   if (!statusContainer) return;
 
@@ -94,15 +94,15 @@ function initScheduleStatus() {
     statusContainer.className = 'status-badge open';
     statusContainer.innerHTML = `
       <span class="status-dot" aria-hidden="true"></span>
-      <span>${isBasque ? `Zabalik orain · ${closingAt}etan itxiko da` : `Abierto ahora · Cierra a las ${closingAt}`}</span>
+      <span>${isBasque ? `Hitzorduetarako eskuragarri · Gaur ${closingAt}ak arte` : `Disponible para citas · Hoy hasta las ${closingAt}`}</span>
     `;
   } else {
     statusContainer.className = 'status-badge closed';
     let statusText = '';
     if (nextOpenToday) {
-      statusText = isBasque ? `Itxita orain · Gaur ${nextOpenToday}etan irekiko da` : `Cerrado ahora · Abre hoy a las ${nextOpenToday}`;
+      statusText = isBasque ? `Hitzorduak eskuragarri gaur ${nextOpenToday}etik aurrera` : `Citas disponibles hoy desde las ${nextOpenToday}`;
     } else {
-      // Buscar siguiente día abierto
+      // Buscar siguiente día con atención
       let nextDay = (currentDay + 1) % 7;
       let daysAhead = 1;
       while ((!SCHEDULE[nextDay] || SCHEDULE[nextDay].length === 0) && daysAhead < 7) {
@@ -119,9 +119,9 @@ function initScheduleStatus() {
       const dayNamesEu = ['igandean', 'astelehenean', 'asteartean', 'asteazkenean', 'ostegunean', 'ostiralean', 'larunbatean'];
 
       if (daysAhead === 1) {
-        statusText = isBasque ? `Itxita orain · Bihar ${timeStr}etan irekiko da` : `Cerrado ahora · Abre mañana a las ${timeStr}`;
+        statusText = isBasque ? `Hurrengo arreta: bihar ${timeStr}etan · Erreserbatu WhatsAppez` : `Próxima atención: mañana a las ${timeStr} · Reserva por WhatsApp`;
       } else {
-        statusText = isBasque ? `Itxita orain · ${dayNamesEu[nextDay]} irekiko da (${timeStr})` : `Cerrado ahora · Abre el ${dayNamesEs[nextDay]} a las ${timeStr}`;
+        statusText = isBasque ? `Hurrengo arreta: ${dayNamesEu[nextDay]} (${timeStr}) · Erreserbatu WhatsAppez` : `Próxima atención: ${dayNamesEs[nextDay]} a las ${timeStr} · Reserva por WhatsApp`;
       }
     }
 

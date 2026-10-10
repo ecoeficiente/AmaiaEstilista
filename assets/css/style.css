@@ -1062,6 +1062,26 @@ ul, ol {
   font-style: italic;
 }
 
+.hours-note {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--color-ink-muted);
+}
+
+.hours-note svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
 .booking-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);

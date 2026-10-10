@@ -65,12 +65,6 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday"],
-        "opens": "15:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"],
         "opens": "09:30",
         "closes": "13:30"
@@ -144,7 +138,7 @@
           <div class="hero-meta-row">
             <div id="business-status" class="status-badge open">
               <span class="status-dot" aria-hidden="true"></span>
-              <span>Arreta hitzorduarekin · Astelehenetik larunbatera</span>
+              <span>Arreta esklusiboa hitzorduarekin · Asteartetik larunbatera</span>
             </div>
             <span class="location-pill">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -184,8 +178,8 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             </div>
             <div class="fact-content">
-              <h4>Ordutegia</h4>
-              <p>Astelehen arratsaldez, asteartetik ostiralera eta larunbat goizez.</p>
+              <h4>Eskuragarritasuna</h4>
+              <p>Asteartetik ostiralera eta larunbat goizez (hitzorduarekin).</p>
             </div>
           </div>
 
@@ -205,7 +199,7 @@
             </div>
             <div class="fact-content">
               <h4>Hitzordua</h4>
-              <p>Arreta pertsonala itxaronaldirik gabe: deitu edo bidali WhatsApp bat.</p>
+              <p>Ezinbestekoa zure zerbitzua bermatzeko eta itxaronaldirik gabe artatzeko.</p>
             </div>
           </div>
         </div>
@@ -419,15 +413,12 @@
         <div class="hours-contact-grid">
           <!-- Asteko ordutegia -->
           <div class="hours-card">
-            <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--color-ink);">Irekiera ordutegia</h3>
-            <table class="hours-table" aria-label="Ile-apaindegiaren asteko irekiera ordutegia">
+            <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--color-ink);">Arreta eta hitzorduen ordutegia</h3>
+            <table class="hours-table" aria-label="Hitzordu bidezko arreta-ordutegia asteartean eta astean zehar">
               <tbody>
                 <tr data-day="1">
                   <td class="day-col">Astelehena</td>
-                  <td class="time-col">
-                    15:00 – 18:00
-                    <span class="time-note">Goizetan itxita</span>
-                  </td>
+                  <td class="time-col is-closed">Itxita</td>
                 </tr>
                 <tr data-day="2">
                   <td class="day-col">Asteartea</td>
@@ -452,7 +443,7 @@
                   <td class="day-col">Larunbata</td>
                   <td class="time-col">
                     09:00 – 13:00
-                    <span class="time-note">Arratsaldez itxita</span>
+                    <span class="time-note">Goizez bakarrik</span>
                   </td>
                 </tr>
                 <tr data-day="0">
@@ -461,13 +452,18 @@
                 </tr>
               </tbody>
             </table>
+
+            <div class="hours-note">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <p>Arreta pertsonalizatua eta itxaronaldirik gabekoa bermatzeko, hitzordu bidez soilik artatzen dugu. Ordutegi honen barruan telefonoz deitu dezakezu zure ordua erreserbatzeko, edo WhatsApp bidez idatzi nahi duzunean.</p>
+            </div>
           </div>
 
           <!-- Zuzeneko hitzordua -->
           <div class="booking-card">
             <div>
               <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--color-ink); margin-bottom: 8px;">Hitzordua hartu</h3>
-              <p class="booking-message">Zure ordua adosteko, telefonoz deitu dezakezu irekiera ordutegian edo WhatsApp mezu bat bidali nahiago duzunean.</p>
+              <p class="booking-message">Zure ordua adosteko, deitu telefonoz arreta-ordutegiaren barruan edo idatzi WhatsAppez hobekien datorkizunean.</p>
             </div>
 
             <div class="direct-actions-box">
@@ -581,7 +577,7 @@
           <ul>
             <li><a href="#prezioak">Prezioak eta zerbitzuak</a></li>
             <li><a href="#nor-heading">Amaia buruz</a></li>
-            <li><a href="#ordutegia">Irekiera ordutegiak</a></li>
+            <li><a href="#ordutegia">Arreta-ordutegia</a></li>
             <li><a href="#kokapena">Nola iritsi</a></li>
           </ul>
         </div>
