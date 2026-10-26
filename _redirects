@@ -1,0 +1,3 @@
+# Redirecciones permanentes 301 para Cloudflare Pages
+/hasiera /eu/ 301
+/hasiera/* /eu/ 301

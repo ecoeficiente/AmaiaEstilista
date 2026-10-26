@@ -18,7 +18,9 @@ def test_site():
         "assets/img/apple-touch-icon.png",
         "favicon.png",
         "robots.txt",
-        "sitemap.xml"
+        "sitemap.xml",
+        "_redirects",
+        ".assetsignore"
     ]
     for f in expected_files:
         path = os.path.join(r"c:\Dev\AmaiaEstilista", f)
@@ -121,7 +123,7 @@ def test_site():
     phone_clean = "697 18 93 05"
     tel_link = "tel:+34697189305"
     wa_link = "https://wa.me/34697189305"
-    maps_link = "https://www.google.com/maps/place/Amaia+Estilista/@43.3238052,-1.9315959,19.5z"
+    maps_link = "https://www.google.com/maps/search/?api=1"
 
     for name, html in [("ES", es_html), ("EU", eu_html)]:
         if phone_clean not in html:
